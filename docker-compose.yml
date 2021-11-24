@@ -1,0 +1,25 @@
+version: "3.4"
+services:
+  phoenix:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "4000:4000"
+    stdin_open: true
+    # command: iex -S mix phx.server
+    depends_on:
+      - db
+    # env_file:
+    #   - .env
+  
+  db:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    # restart: always
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

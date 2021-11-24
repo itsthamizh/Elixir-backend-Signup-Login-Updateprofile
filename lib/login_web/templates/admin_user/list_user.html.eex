@@ -1,0 +1,26 @@
+<h1>Listing Pending Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Role</th>
+
+      <th>Aprove || Reject</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for users <- @users do %>
+    <tr>
+      <td><%= users.email %></td>
+      <td><%= users.role %></td>
+
+      <td>
+
+        <span><%= link "Aprove", to: Routes.admin_user_path(@conn, :aprove_user, users) %></span>
+        <span><%= link "Reject", to: Routes.admin_user_path(@conn, :reject_user, users) %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>

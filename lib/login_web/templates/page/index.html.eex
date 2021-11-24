@@ -1,0 +1,22 @@
+
+<section class="row">
+
+
+  <article class="column">
+    <h2>Admin User</h2>
+
+
+      <a href="admin_users"><button>Admin </button></a>
+
+
+  </article>
+
+
+  <article class="column">
+    <h2>User </h2>
+
+      <a href="users/register"><button>User</button></a>
+
+  </article>
+
+</section>
